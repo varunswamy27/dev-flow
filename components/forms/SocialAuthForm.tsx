@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
-import { Button } from "../ui/button";
-import { toast } from "@/hooks/use-toast";
-import { signIn } from "next-auth/react";
 import ROUTES from "@/constant/routes";
+import { signIn } from "next-auth/react";
+import Image from "next/image";
+import { toast } from "@/hooks/use-toast";
+import { Button } from "../ui/button";
 
 const SocialAuthForm = () => {
   const buttonClass =
@@ -14,7 +14,7 @@ const SocialAuthForm = () => {
     try {
       await signIn(provider, {
         callbackUrl: ROUTES.HOME,
-        redirect: false,
+        // redirect: false,
       });
     } catch (error) {
       console.log("Error during sign-in:", error);
